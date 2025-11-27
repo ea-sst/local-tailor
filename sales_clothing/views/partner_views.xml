@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- =========================
+         List View (only name, phone)
+         ========================= -->
+    <record id="view_tailor_partner_list" model="ir.ui.view">
+        <field name="name">res.partner.tailor.list</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <list string="کسٹمرز">
+                <field name="name" string="نام"/>
+                <field name="phone" string="موبائل"/>
+                <field name="tailor_serial_number" string="سیریل نمبر" decoration-bf="1"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- =========================
+         Search View (only name, phone)
+         ========================= -->
+    <record id="view_tailor_partner_search" model="ir.ui.view">
+        <field name="name">res.partner.tailor.search</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <search string="کسٹمرز">
+                <field name="tailor_serial_number" string="سیریل نمبر"/>
+                <field name="name" string="نام"/>
+                <field name="phone" string="موبائل"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- =========================
+         Form View – Simplified
+         ========================= -->
+    <record id="view_tailor_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.tailor.form</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form string="کسٹمرز">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="tailor_serial_number" readonly="1" nolabel="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" string="نام" default_cost="1"/>
+                        </group>
+                        <group>
+                            <field name="phone" string="موبائل"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="قمیض" name="kameez">
+                            <group>
+                                <group>
+                                    <field name="lambai_kameez"/>
+                                    <field name="shoulder_kameez"/>
+                                    <field name="bazu_kameez"/>
+                                    <field name="galla_kameez"/>
+                                    <field name="chaati_kameez"/>
+                                </group>
+                                <group>
+                                    <field name="daaman_kameez"/>
+                                    <field name="shalwar_lambai_kameez"/>
+                                    <field name="shalwar_pancha_kameez"/>
+                                    <field name="additional_notes_kameez"/>
+                                </group>
+                            </group>
+
+                        </page>
+                        <page string="شرٹ" name="shirt">
+                            <group>
+                                <group>
+                                    <field name="lambai_shirt"/>
+                                    <field name="shoulder_shirt"/>
+                                    <field name="bazu_shirt"/>
+                                    <field name="galla_shirt"/>
+                                    <field name="chaati_shirt"/>
+                                </group>
+                                <group>
+                                    <field name="daaman_shirt"/>
+                                    <field name="front_pocket_shirt"/>
+                                    <field name="double_cuff_shirt"/>
+                                    <field name="double_pocket_shoulder_shirt"/>
+                                    <field name="additional_notes_shirt"/>
+                                </group>
+                            </group>
+
+                        </page>
+                        <page string="پینٹ" name="pant">
+
+                            <group>
+                                <group>
+                                    <field name="lambai_pant"/>
+                                    <field name="kamar_pant"/>
+                                    <field name="hip_pant"/>
+                                    <field name="gadri_pant"/>
+                                    <field name="goda_pant"/>
+                                </group>
+                                <group>
+                                    <field name="mori_pant"/>
+                                    <field name="baghair_plait_pant"/>
+                                    <field name="double_plait_pant"/>
+                                    <field name="gam_pati_pant"/>
+                                    <field name="additional_notes_pant"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="coat_waistcoat" string="کوٹ / ویسٹ کوٹ">
+                            <group>
+                                <group>
+                                    <field name="lambai_coat"/>
+                                    <field name="teera_coat"/>
+                                    <field name="chaati_coat"/>
+                                    <field name="bazu_coat"/>
+                                    <field name="kamar_coat"/>
+                                </group>
+                                <group>
+                                    <field name="hip_coat"/>
+                                    <field name="side_chaak_coat"/>
+                                    <field name="button_style_coat" string="بٹنز" widget="radio"/>
+                                    <field name="double_silai_coat"/>
+                                    <field name="additional_notes_coat"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="اضافی معلومات" name="additional_info">
+                            <group>
+                                <group>
+                                    <field name="double_cuff_misc"/>
+                                    <field name="paiping_wala"/>
+                                    <field name="front_pati"/>
+                                    <field name="mondha_tayar"/>
+                                    <field name="half_button"/>
+                                </group>
+                                <group>
+                                    <field name="gol_kameez_misc"/>
+                                    <field name="collar_misc"/>
+                                    <field name="cuff_misc"/>
+                                    <field name="samne_pocket"/>
+                                    <field name="shalwar_pocket"/>
+                                </group>
+                                <group>
+                                    <field name="seedhi_qameez"/>
+                                    <field name="ban_misc"/>
+                                    <field name="bazu_misc"/>
+                                </group>
+                                <group>
+                                    <field name="side_pocket"/>
+                                    <field name="contras_piece"/>
+                                    <field name="additional_notes_misc"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- =========================
+         Action for Tailor Customers
+         ========================= -->
+    <record id="action_tailor_customers" model="ir.actions.act_window">
+        <field name="name">کسٹمرز</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_tailor_partner_search"/>
+        <field name="context">{'tailor_customer_sequence': True}</field>
+        <field name="domain">[('tailor_serial_number', '!=', False)]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'sequence': 1, 'view_id': ref('view_tailor_partner_list')}),
+            (0, 0, {'view_mode': 'form', 'sequence': 2, 'view_id': ref('view_tailor_partner_form')})]"/>
+    </record>
+
+    <!-- =========================
+         Menu
+         ========================= -->
+    <menuitem id="menu_tailor_customers_root"
+              name="کسٹمرز"
+              action="action_tailor_customers"
+              sequence="10"/>
+
+</odoo>
