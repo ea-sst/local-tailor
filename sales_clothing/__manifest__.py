@@ -17,6 +17,11 @@
         'data/ir_sequence.xml',
         'views/partner_views.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'sales_clothing/static/src/css/tailor_rtl.css',
+        ]
+    },
     'installable': True,
     'application': True,
 }

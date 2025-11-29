@@ -8,13 +8,14 @@
         <field name="name">res.partner.tailor.list</field>
         <field name="model">res.partner</field>
         <field name="arch" type="xml">
-            <list string="کسٹمرز">
+            <list string="کسٹمرز" class="tailor_rtl_list">
                 <field name="name" string="نام"/>
                 <field name="phone" string="موبائل"/>
                 <field name="tailor_serial_number" string="سیریل نمبر" decoration-bf="1"/>
             </list>
         </field>
     </record>
+
 
     <!-- =========================
          Search View (only name, phone)
@@ -38,7 +39,7 @@
         <field name="name">res.partner.tailor.form</field>
         <field name="model">res.partner</field>
         <field name="arch" type="xml">
-            <form string="کسٹمرز">
+            <form string="کسٹمرز" class="tailor_rtl_form">
                 <sheet>
                     <div class="oe_title">
                         <h1>
@@ -184,6 +185,8 @@
     <menuitem id="menu_tailor_customers_root"
               name="کسٹمرز"
               action="action_tailor_customers"
-              sequence="10"/>
+              sequence="10"
+              web_icon="sales_clothing,static/description/tailor_icon.png"
+    />
 
 </odoo>

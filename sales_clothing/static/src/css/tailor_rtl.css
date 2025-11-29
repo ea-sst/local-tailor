@@ -1,0 +1,55 @@
+/* Apply RTL-like layout only inside this specific form */
+.tailor_rtl_form .o_group {
+    direction: rtl;         /* flip label/field order */
+}
+
+/* Labels: sit on the right, text RTL */
+.tailor_rtl_form .o_group .o_td_label {
+    text-align: right;
+    direction: rtl;
+}
+
+/* Fields cell: keep cell itself LTR-ish */
+.tailor_rtl_form .o_group .o_td_field {
+    text-align: left;
+    direction: ltr;
+}
+
+/* Field widgets and inputs: make sure the typed text is LTR & left-aligned */
+.tailor_rtl_form .o_group .o_td_field .o_input,
+.tailor_rtl_form .o_group .o_td_field input,
+.tailor_rtl_form .o_group .o_td_field textarea,
+.tailor_rtl_form .o_group .o_td_field .o_field_widget {
+    direction: ltr;
+    text-align: left;
+}
+
+/* Make notebook tabs RTL inside this form (more generic selector) */
+.tailor_rtl_form .o_notebook .nav-tabs,
+.tailor_rtl_form ul.o_notebook.nav-tabs {
+    direction: rtl !important;
+    text-align: right;
+}
+
+/* Tab labels: RTL text, aligned right */
+.tailor_rtl_form .o_notebook .nav-tabs .nav-link,
+.tailor_rtl_form ul.o_notebook.nav-tabs .nav-link {
+    direction: rtl;
+    text-align: right;
+}
+
+/* RTL-style list just for tailor customers */
+.tailor_rtl_list {
+    direction: rtl;
+}
+
+/* Right-align headers and cells */
+.tailor_rtl_list thead th,
+.tailor_rtl_list tbody td {
+    text-align: right;
+}
+
+/* Keep cell text itself LTR (for numbers like phone/serial) */
+.tailor_rtl_list tbody td {
+    direction: ltr;
+}
