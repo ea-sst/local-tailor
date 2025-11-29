@@ -53,3 +53,30 @@
 .tailor_rtl_list tbody td {
     direction: ltr;
 }
+
+/* Headings inside the tailor form notebook: RTL + right aligned */
+.tailor_rtl_form .o_notebook h1 {
+    direction: rtl;
+    text-align: right;
+}
+
+/* ----------------------------------------------------------
+   1. Notebook headings (قمیض، شرٹ، پینٹ…)
+   ---------------------------------------------------------- */
+.tailor_rtl_form .o_notebook h1 {
+    direction: rtl;
+    text-align: right;
+    color: #B9418D !important;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* ----------------------------------------------------------
+   2. Serial Number (oe_title) → RTL + right aligned + colour
+   ---------------------------------------------------------- */
+.tailor_rtl_form h1 {
+    direction: rtl;
+    text-align: right;
+    color: #B9418D !important;
+}

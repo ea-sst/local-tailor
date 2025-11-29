@@ -41,7 +41,7 @@
         <field name="arch" type="xml">
             <form string="کسٹمرز" class="tailor_rtl_form">
                 <sheet>
-                    <div class="oe_title">
+                    <div>
                         <h1>
                             <field name="tailor_serial_number" readonly="1" nolabel="1"/>
                         </h1>
@@ -56,7 +56,12 @@
                     </group>
 
                     <notebook>
-                        <page string="قمیض" name="kameez">
+                        <page string="ناپ" name="measurements">
+                            <br/>
+                            <h1>
+                                قمیض
+                            </h1>
+                            <br/>
                             <group>
                                 <group>
                                     <field name="lambai_kameez"/>
@@ -72,9 +77,9 @@
                                     <field name="additional_notes_kameez"/>
                                 </group>
                             </group>
-
-                        </page>
-                        <page string="شرٹ" name="shirt">
+                            <br/>
+                            <h1>شرٹ</h1>
+                            <br/>
                             <group>
                                 <group>
                                     <field name="lambai_shirt"/>
@@ -92,9 +97,11 @@
                                 </group>
                             </group>
 
-                        </page>
-                        <page string="پینٹ" name="pant">
-
+                            <br/>
+                            <h1>
+                                پینٹ
+                            </h1>
+                            <br/>
                             <group>
                                 <group>
                                     <field name="lambai_pant"/>
@@ -111,8 +118,11 @@
                                     <field name="additional_notes_pant"/>
                                 </group>
                             </group>
-                        </page>
-                        <page name="coat_waistcoat" string="کوٹ / ویسٹ کوٹ">
+                            <br/>
+                            <h1>
+                                کوٹ / ویسٹ کوٹ
+                            </h1>
+                            <br/>
                             <group>
                                 <group>
                                     <field name="lambai_coat"/>
@@ -129,8 +139,11 @@
                                     <field name="additional_notes_coat"/>
                                 </group>
                             </group>
-                        </page>
-                        <page string="اضافی معلومات" name="additional_info">
+                            <br/>
+                            <h1>
+                                اضافی معلومات
+                            </h1>
+                            <br/>
                             <group>
                                 <group>
                                     <field name="double_cuff_misc"/>
